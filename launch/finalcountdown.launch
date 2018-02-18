@@ -1,0 +1,17 @@
+<launch>
+	
+	<!-- other launch stuff -->
+	<include file="$(find racecar)/launch/teleop.launch"/>   
+	<include file="$(find zed_wrapper)/launch/zed.launch"/>
+	<include file="$(find ar_localization)/launch/ar_tracker.launch"/>
+
+
+	<!-- state controller -->
+	<node name = "main_driver" pkg = "MI6" type = "main_driver.py"/>
+
+	<!-- course controllers -->
+	<node name = "PotientialField" pkg = "MI6" type = "PotientialField.py"/>
+	<node name = "WaterYellowBrickNode" pkg = "MI6" type = "WaterYellowBrickNode.py" />
+	<node name = "RollingWeaveNode" pkg = "MI6" type = "RollingWeaveNode.py" />
+	<node name = "OverpassNode" pkg = "MI6" type = "OverpassNode.py" />
+</launch>

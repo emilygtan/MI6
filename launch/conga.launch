@@ -1,0 +1,13 @@
+<launch>
+	
+	<!-- other launch stuff -->
+	<include file="$(find racecar)/launch/teleop.launch"/>   
+	<include file="$(find zed_wrapper)/launch/zed.launch"/>
+	<include file="$(find ar_localization)/launch/ar_tracker_conga.launch"/>
+
+
+	<!-- nodes -->
+	<node name = "ar_monitor" pkg = "MI6" type = "ar_monitor.py" args = "" /> 
+	<node name = "parker" pkg = "MI6" type = "parker.py.py" args = "" /> 
+
+</launch>
